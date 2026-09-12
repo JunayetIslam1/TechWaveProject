@@ -1,0 +1,413 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+.tw-root {
+  font-family: 'Inter', sans-serif;
+  background: #1A0B2E;
+  color: #fff;
+  width: 100%;
+  overflow-x: hidden;
+}
+.tw-root * { box-sizing: border-box; }
+
+/* ---------- Navbar ---------- */
+.tw-navbar {
+  background: #1A0B2E;
+  padding: 30px 0;
+  border-bottom: 1px solid rgba(65,37,103,1);
+}
+.tw-navbar-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+.tw-logo { height: 24px; }
+.tw-navbar-menu {
+  display: none;
+  gap: 32px;
+  color: #fff;
+  font-weight: 500;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.tw-navbar-menu a { color: #fff; text-decoration: none; }
+.tw-navbar-btn {
+  display: none;
+  align-items: center;
+  gap: 8px;
+  font-weight: 600;
+  color: #fff;
+  padding: 12px 16px;
+  border-radius: 1000px;
+  border: none;
+  cursor: pointer;
+  background: linear-gradient(47.64deg, #F7E93F, #FB09B4, #9100F8);
+  font-family: 'Inter', sans-serif;
+  font-size: 15px;
+  text-decoration: none;
+}
+.tw-hamburger { height: 14px; display: block; }
+@media (min-width: 993px) {
+  .tw-navbar-menu { display: flex; }
+  .tw-navbar-btn { display: inline-flex; }
+}
+@media (min-width: 1024px) {
+  .tw-hamburger { display: none; }
+}
+
+/* ---------- Hero ---------- */
+.tw-hero-section {
+  background-image: url('./assets/images/hero-bg.png');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding: 48px 0;
+}
+@media (min-width: 1024px) { .tw-hero-section { padding: 90px 0; } }
+
+.tw-hero-img-container {
+  position: relative;
+  height: 450px;
+}
+.tw-hero-img-btn {
+  position: absolute;
+  left: 56%;
+  transform: translateX(-50%);
+  top: 40px;
+  z-index: 3;
+  font-family: 'Inter', sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+  color: #1A0B2E;
+  background: #4ade80;
+  padding: 8px 16px;
+  border-radius: 1000px;
+  border: none;
+  cursor: pointer;
+  animation: tw-float 4s ease-in-out infinite;
+}
+.tw-hero-background {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 30px;
+  z-index: 1;
+  border: 3px solid #F7E93F;
+  border-radius: 50%;
+  animation: tw-float 4s ease-in-out infinite, tw-borderBounce 3s ease-in-out infinite;
+  width: 350px;
+  height: 350px;
+}
+.tw-microphone {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 100px;
+  z-index: 2;
+  animation: tw-float 4s ease-in-out infinite;
+  width: 117px;
+}
+@media (max-width: 576px) {
+  .tw-hero-img-container { width: 260px; height: 280px; margin: 0 auto; position: relative; left: 0; }
+  .tw-hero-background { top: 25px; width: 240px; height: 240px; }
+  .tw-microphone { top: 80px; width: 90px; }
+  .tw-hero-img-btn { left: 80%; top: 30px; font-size: 13px; padding: 6px 14px; }
+}
+@keyframes tw-float {
+  0%, 100% { transform: translateX(-50%) translateY(0); }
+  50% { transform: translateX(-50%) translateY(-8px); }
+}
+@keyframes tw-borderBounce {
+  0%, 100% { border-color: #9100f8; box-shadow: 0 0 10px #9100f8; }
+  50% { border-color: #FB09B4; box-shadow: 0 0 18px #FB09B4; }
+}
+
+.tw-hero-desc {
+  max-width: 400px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: #fff;
+  margin-bottom: 64px;
+}
+@media (min-width: 1024px) { .tw-hero-desc { max-width: 1200px; } }
+.tw-hero-title {
+  font-weight: 800;
+  font-size: 3rem;
+  margin-bottom: 8px;
+}
+@media (min-width: 1024px) { .tw-hero-title { font-size: 3.75rem; } }
+.tw-hero-tagline { margin-bottom: 24px; }
+.tw-hero-buttons { display: flex; gap: 12px; }
+.tw-btn-spotify {
+  display: flex; gap: 8px; justify-content: center; align-items: center;
+  border-radius: 1000px;
+  padding: 12px 8px;
+  height: 48px;
+  font-size: 13px;
+  cursor: pointer; border: none; color: #fff; font-family: 'Inter', sans-serif;
+  background: linear-gradient(47.64deg, #F7E93F, #FB09B4, #9100F8);
+  text-decoration: none;
+}
+@media (min-width: 1024px) { .tw-btn-spotify { padding: 12px 20px; } }
+.tw-btn-subscribe {
+  display: flex; gap: 8px; align-items: center; justify-content: center;
+  border: 1px solid #22c55e;
+  color: #22c55e;
+  border-radius: 1000px;
+  padding: 12px 20px;
+  height: 48px;
+  background: transparent;
+  cursor: pointer;
+  font-family: 'Inter', sans-serif;
+  text-decoration: none;
+}
+.tw-hero-buttons img { width: 18px; height: 18px; }
+
+/* ---------- About ---------- */
+.tw-about-section {
+  background: #1A0B2E;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 12px;
+}
+@media (min-width: 1024px) { .tw-about-section { padding: 0; } }
+.tw-about-inner {
+  max-width: 400px;
+  text-align: center;
+  border-bottom: 1px solid #fff;
+}
+@media (min-width: 1024px) { .tw-about-inner { max-width: 1200px; } }
+.tw-about-title {
+  font-weight: 700;
+  font-size: 2.25rem;
+  color: #fff;
+  margin-bottom: 16px;
+}
+@media (min-width: 1024px) { .tw-about-title { font-size: 3rem; } }
+.tw-about-text {
+  font-size: 14px;
+  color: #fff;
+  margin-bottom: 80px;
+  line-height: 1.7;
+}
+@media (min-width: 1024px) { .tw-about-text { font-size: 16px; } }
+
+.tw-stats-grid {
+  max-width: 400px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 80px;
+  margin-top: 80px;
+  margin-bottom: 120px;
+}
+@media (min-width: 1024px) { .tw-stats-grid { max-width: 1200px; grid-template-columns: repeat(4, 1fr); } }
+.tw-stat { text-align: center; }
+.tw-stat-number { color: #00FF88; font-size: 2.25rem; font-weight: 900; }
+@media (min-width: 1024px) { .tw-stat-number { font-size: 3rem; } }
+.tw-stat-label { font-size: 16px; color: #fff; }
+
+/* ---------- Why choose ---------- */
+.tw-why-section {
+  background: #230E3D;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 64px 24px;
+}
+@media (min-width: 1024px) { .tw-why-section { padding: 120px 24px; } }
+.tw-why-title {
+  margin-bottom: 40px;
+  font-size: 1.875rem;
+  font-weight: 700;
+  color: #fff;
+  text-align: center;
+}
+@media (min-width: 768px) { .tw-why-title { font-size: 3rem; } }
+
+.tw-why-grid {
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+}
+@media (min-width: 1024px) { .tw-why-grid { grid-template-columns: repeat(3, 1fr); gap: 30px; } }
+
+.tw-card {
+  background-color: rgba(53,17,101,0.4);
+  border-radius: 40px;
+  padding: 40px 32px;
+}
+@media (min-width: 1024px) { .tw-card { padding: 40px 56px; } }
+.tw-card-audio { display: flex; flex-direction: column; justify-content: center; }
+@media (min-width: 1024px) {
+  .tw-card-audio { grid-row: span 2 / span 2; padding: 80px 56px; }
+  .tw-card-mobile, .tw-card-community, .tw-card-interviews { grid-column: span 2 / span 2; }
+}
+.tw-card-icon { width: 48px; height: 48px; margin-bottom: 16px; }
+.tw-card-title { color: #fff; font-size: 1.5rem; font-weight: 700; margin-bottom: 16px; }
+.tw-card-text { line-height: 1.5rem; color: rgba(255,255,255,0.8); }
+
+/* ---------- Featured episodes / Host ---------- */
+.tw-featured-section {
+  background: #1A0B2E;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 8px;
+  padding-top: 120px;
+  padding-bottom: 120px;
+}
+@media (min-width: 1024px) { .tw-featured-section { padding-left: 0; padding-right: 0; } }
+
+.tw-episodes-wrap { max-width: 400px; margin: 0 auto; margin-bottom: 120px; }
+@media (min-width: 1024px) { .tw-episodes-wrap { max-width: 1200px; } }
+.tw-section-title { font-size: 2.25rem; font-weight: 700; color: #fff; margin-bottom: 40px; text-align: center; }
+@media (min-width: 1024px) { .tw-section-title { font-size: 3rem; } }
+
+.tw-episodes-row {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  align-items: center;
+}
+@media (min-width: 1024px) { .tw-episodes-row { flex-direction: row; } }
+
+.tw-episode-card { width: 100%; }
+@media (min-width: 1024px) { .tw-episode-card { max-width: 380px; } }
+.tw-episode-iframe { width: 100%; border-top-left-radius: 32px; border-top-right-radius: 32px; display: block; border: none; }
+.tw-episode-body {
+  background-color: rgba(53,17,101,0.4);
+  padding: 24px;
+  border-bottom-left-radius: 32px;
+  border-bottom-right-radius: 32px;
+}
+.tw-episode-title { font-size: 1.5rem; font-weight: 700; color: #fff; margin-bottom: 12px; }
+.tw-episode-desc { line-height: 1.5rem; color: #fff; margin-bottom: 12px; }
+.tw-episode-meta { display: flex; gap: 12px; align-items: center; margin: 0; }
+.tw-episode-meta img { width: 20px; height: 20px; }
+.tw-episode-meta span { color: #00FF88; font-weight: 600; }
+
+.tw-host-wrap { max-width: 400px; margin: 0 auto; }
+@media (min-width: 1024px) { .tw-host-wrap { max-width: 1200px; } }
+.tw-host-title { font-size: 3rem; font-weight: 700; color: #fff; margin-bottom: 40px; text-align: center; }
+.tw-host-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+  background-color: rgba(53,17,101,0.4);
+  padding: 48px 40px;
+  border-radius: 40px;
+}
+@media (min-width: 1024px) { .tw-host-container { flex-direction: row; align-items: flex-start; } }
+.tw-host-photo { border-radius: 16px; width: 200px; height: 200px; flex-shrink: 0; }
+.tw-host-desc { display: flex; flex-direction: column; align-items: center; text-align: center; }
+@media (min-width: 1024px) { .tw-host-desc { align-items: flex-start; text-align: left; } }
+.tw-host-name { font-size: 32px; font-weight: 700; color: #fff; margin-bottom: 16px; }
+.tw-host-bio { line-height: 1.5rem; color: #fff; margin-bottom: 16px; }
+.tw-host-socials { display: flex; gap: 12px; align-items: center; }
+.tw-host-socials a { display: inline-flex; }
+.tw-host-socials img { cursor: pointer; height: 22px; }
+
+/* ---------- Footer ---------- */
+.tw-footer {
+  background-image: url('./assets/images/footer-bg.png');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  padding: 64px 0;
+}
+@media (min-width: 1024px) { .tw-footer { padding: 120px 0; } }
+.tw-footer-logo { margin-bottom: 32px; width: 200px; }
+@media (min-width: 1024px) { .tw-footer-logo { width: 300px; } }
+.tw-footer-links {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+  align-items: center;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+@media (min-width: 1024px) { .tw-footer-links { grid-template-columns: repeat(4, 1fr); gap: 40px; } }
+.tw-footer-links li { display: flex; gap: 8px; color: #fff; align-items: center; }
+.tw-footer-links li:first-child { justify-content: center; }
+.tw-footer-links img { width: 24px; height: 24px; }
+.tw-footer-link {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  color: #fff;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .tw-host-desc {
+    text-align: center;
+    padding: 0 20px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  /* App.css এ এটি আপডেট করুন */
+.tw-host-desc {
+  width: 100%;
+  padding: 0 5px; /* সাইডের প্যাডিং কমিয়ে লেখা ছড়ানোর জায়গা দেওয়া হয়েছে */
+  box-sizing: border-box;
+}
+
+.tw-host-bio {
+  text-align: justify;      /* দুই পাশ সমান রাখবে */
+  font-size: 14px;          /* ফন্ট সাইজ ১৪ পিক্সেল করলে গ্যাপ তৈরি হবে না */
+  line-height: 1.5;         /* লেখার স্পেসিং বজায় রাখবে */
+  word-spacing: -0.5px;     /* শব্দের মাঝের অতিরিক্ত গ্যাপ টেনে ছোট করবে */
+  hyphens: auto;            /* বড় শব্দ থাকলে ভেঙ্গে সমান করে দেবে */
+  -webkit-hyphens: auto;
+  margin: 0 auto;
+}
+
+  .tw-footer-links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+    text-align: center;
+    padding: 0 15px;
+    margin: 15px 0;
+  }
+}
+.tw-footer-links {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 24px; /* লিংকগুলোর মাঝের দূরত্ব ঠিক করার জন্য গ্যাপ কমিয়ে দেওয়া হলো */
+  margin: 20px 0;
+  flex-wrap: wrap;
+}
+
+/* লিংকগুলোর ভিতরের স্টাইল যদি প্রয়োজন হয় */
+.tw-footer-links a {
+  display: flex;
+  align-items: center;
+  gap: 8px; /* আইকন এবং লেখার মাঝের দূরত্ব */
+  text-decoration: none;
+}
+.tw-footer-link:hover { opacity: 0.8; }
+.tw-copyright { color: #FAFAFA; margin: 24px 12px 0; }
+@media (min-width: 1024px) { .tw-copyright { margin-left: 0; margin-right: 0; } }
