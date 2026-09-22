@@ -364,19 +364,18 @@
     box-sizing: border-box;
   }
 
-  /* App.css এ এটি আপডেট করুন */
 .tw-host-desc {
   width: 100%;
-  padding: 0 5px; /* সাইডের প্যাডিং কমিয়ে লেখা ছড়ানোর জায়গা দেওয়া হয়েছে */
+  padding: 0 5px; 
   box-sizing: border-box;
 }
 
 .tw-host-bio {
-  text-align: justify;      /* দুই পাশ সমান রাখবে */
-  font-size: 14px;          /* ফন্ট সাইজ ১৪ পিক্সেল করলে গ্যাপ তৈরি হবে না */
-  line-height: 1.5;         /* লেখার স্পেসিং বজায় রাখবে */
-  word-spacing: -0.5px;     /* শব্দের মাঝের অতিরিক্ত গ্যাপ টেনে ছোট করবে */
-  hyphens: auto;            /* বড় শব্দ থাকলে ভেঙ্গে সমান করে দেবে */
+  text-align: justify;  
+  font-size: 14px;        
+  line-height: 1.5;       
+  word-spacing: -0.5px;    
+  hyphens: auto;            
   -webkit-hyphens: auto;
   margin: 0 auto;
 }
@@ -396,16 +395,15 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 24px; /* লিংকগুলোর মাঝের দূরত্ব ঠিক করার জন্য গ্যাপ কমিয়ে দেওয়া হলো */
+  gap: 24px; 
   margin: 20px 0;
   flex-wrap: wrap;
 }
 
-/* লিংকগুলোর ভিতরের স্টাইল যদি প্রয়োজন হয় */
 .tw-footer-links a {
   display: flex;
   align-items: center;
-  gap: 8px; /* আইকন এবং লেখার মাঝের দূরত্ব */
+  gap: 8px; 
   text-decoration: none;
 }
 .tw-footer-link:hover { opacity: 0.8; }
